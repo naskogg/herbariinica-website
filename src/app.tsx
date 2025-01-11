@@ -1,43 +1,30 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import "./app.css";
+import background from "./assets/background.svg";
+import page1group1 from "./assets/page1group1.svg";
+import page1group2 from "./assets/page1group2.svg";
+import page1group3 from "./assets/page1group3.svg";
+import page2group1 from "./assets/page2group1.svg";
+import page2group2 from "./assets/page2group2.svg";
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
+    <div
+      className={"wrapper flex-col"}
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div class={"flex flex-col "}>
+        <img className={"flex"} src={page1group1} alt="page1group1" />
+        <img className={"flex"} src={page1group2} alt="page1group2" />
+        <img className={"flex"} src={page1group3} alt="page1group3" />
       </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
+      <div class={"flex flex-col"}>
+        <img className={"flex "} src={page2group1} alt="page2group1" />
+        <img className={"flex"} src={page2group2} alt="page2group2" />
       </div>
-      <p>
-        Check out{' '}
-        <a
-          href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-          target="_blank"
-        >
-          create-preact
-        </a>
-        , the official Preact + Vite starter
-      </p>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
